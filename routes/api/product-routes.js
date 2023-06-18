@@ -13,15 +13,28 @@ router.get('/', async(req, res) => {
     });
     res.json(products);
   }catch(error){
-    console.error('Error fetching categories:', error);
-    res.status(500).json({ error: 'Error fetching categories' });
+    console.error('Error fetching products:', error);
+    res.status(500).json({ error: 'Error fetching products' });
   };
 });
 
 // get one product
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  const product_id=req.params.id;
+  try{
+   const product = await Product.findByPk(product_id,{
+    include:[Category,{model:Tag, as: 'Tags'}],
+   });
+   if (!product){
+     return res.status(404).json({error:'Product not found'});
+   }
+   res.status(200).json(product);
+  }catch(error){
+   console.error('Error fetching product:', error);
+   res.status(500).json({ error: 'Error fetching product' });
+  };
 });
 
 // create new product
