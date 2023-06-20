@@ -57,5 +57,5 @@ N/A
 Licensed under the [MIT](https://github.com/ghiasnaser/E-Commerce-Back-End/blob/1bf3ed6f69fb2cc52bba4dde683e142adaccee39/LICENSE) license.
 
 ## Links
-The Recorded video link on how to use it:  
+The Recorded video link on how to use it:  https://watch.screencastify.com/v/JXfthGf4gnsRy6lnMMxb
 The repository link: https://github.com/ghiasnaser/E-Commerce-Back-End.git
